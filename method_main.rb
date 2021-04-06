@@ -23,7 +23,7 @@ def choose_product(products)
 end
 
 # 商品の個数を決定
-def decide_quantity
+def decide_quantity(chosen_product)
   puts "#{chosen_product[:name]}ですね。何個買いますか？"
   while true
     print "個数を入力 >"
@@ -31,6 +31,7 @@ def decide_quantity
     break if quantity_of_product >= 1
     puts "1個以上選んで下さい。"
   end
+  quanty_of_product
 end
 
 # 合計金額を計算
@@ -58,5 +59,5 @@ products = [
 
 disp_products(products) # 商品を表示
 chosen_product = choose_product(products) # 商品を選択
-decide_quantity # 商品の個数を決定
+quantity_of_product = decide_quantity(chosen_product) # 商品の個数を決定
 calculate_charges # 合計金額を計算
