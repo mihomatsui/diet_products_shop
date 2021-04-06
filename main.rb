@@ -12,15 +12,26 @@ products.each.with_index(1) do |product,i|
   puts "#{i}.#{product[:name]}(#{product[:price]}円)"
 end
 
-print "商品の番号を選択 > "
-# 整数化したいので.to_iをつける
-select_product_num = gets.to_i
+# 商品を選択
+while true
+  print "商品の番号を選択 > "
+  # 整数化したいので.to_iをつける
+  select_product_num = gets.to_i
+  # 入力値に1から4が含まれるかどうかの確認
+  break if (1..4).include?(select_product_num)
+  puts "1~4の番号を入力して下さい。"
+end
 # 選んだ商品
 chosen_product = products[select_product_num -1]
 
+# 個数を決定
 puts "#{chosen_product[:name]}ですね。何個買いますか？"
-print "個数を入力 >"
-quantity_of_product = gets.to_i
+while true
+  print "個数を入力 >"
+  quantity_of_product = gets.to_i
+  break if quantity_of_product >= 1
+  puts "1個以上選んで下さい。"
+end
 
 # 合計金額 = 選んだ商品の金額 * 個数 + 送料
 total_price =  chosen_product[:price] * quantity_of_product
