@@ -31,11 +31,11 @@ def decide_quantity(chosen_product)
     break if quantity_of_product >= 1
     puts "1個以上選んで下さい。"
   end
-  quanty_of_product
+  quantity_of_product
 end
 
 # 合計金額を計算
-def calculate_charges
+def calculate_charges(chosen_product, quantity_of_product)
   total_price =  chosen_product[:price] * quantity_of_product
 
   if total_price < 3000
@@ -60,4 +60,4 @@ products = [
 disp_products(products) # 商品を表示
 chosen_product = choose_product(products) # 商品を選択
 quantity_of_product = decide_quantity(chosen_product) # 商品の個数を決定
-calculate_charges # 合計金額を計算
+calculate_charges(chosen_product, quantity_of_product) # 合計金額を計算
