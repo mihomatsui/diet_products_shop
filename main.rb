@@ -26,8 +26,9 @@ quantity_of_product = gets.to_i
 total_price =  chosen_product[:price] * quantity_of_product
 
 if total_price < 3000
- total_price += 1000
- puts "お買い上げ金額が3000円未満のため、送料1000円を別途頂きます。"
+  # 3000円未満の場合送料500円がかかる
+ total_price += 500
+ puts "お買い上げ金額が3000円未満のため、送料500円を別途頂きます。"
 end
 puts "合計金額は#{total_price}円です。"
 puts "お買い上げありがとうございました！"
