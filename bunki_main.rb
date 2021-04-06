@@ -33,6 +33,7 @@ while true
   puts "1個以上選んで下さい。"
 end
 
+# 合計金額の計算
 # 合計金額 = 選んだ商品の金額 * 個数 + 送料
 total_price =  chosen_product[:price] * quantity_of_product
 
