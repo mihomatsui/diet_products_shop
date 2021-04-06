@@ -23,7 +23,7 @@ while true
   print "商品の番号を選択 > "
   # 整数化したいので.to_iをつける
   select_product_num = gets.to_i
-  # 入力値に1から4が含まれるかどうかの確認
+  # 入力値に商品の番号が含まれるかどうかの確認
   break if (FIRST_PRODUCT_NUM..LAST_PRODUCT_NUM).include?(select_product_num)
   puts "#{FIRST_PRODUCT_NUM}~#{LAST_PRODUCT_NUM}の番号を入力して下さい。"
 end
